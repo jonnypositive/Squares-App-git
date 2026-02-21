@@ -1,0 +1,375 @@
+:root {
+  --aqua: #008e97;
+  --orange: #fc4c02;
+  --blue: #005778;
+  --white: #ffffff;
+  --ink: #053948;
+  --panel: #f7fdfe;
+  --line: #8ac7cf;
+  --muted: #2b6576;
+  --pick: #b7edf0;
+  --winner: #ffd8c9;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  color: var(--ink);
+  background:
+    linear-gradient(180deg, rgba(0, 87, 120, 0.2), rgba(0, 142, 151, 0.05)),
+    repeating-linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.06) 0,
+      rgba(255, 255, 255, 0.06) 2px,
+      transparent 2px,
+      transparent 58px
+    ),
+    #e6f6f7;
+}
+
+.app {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.hero {
+  position: relative;
+  background: linear-gradient(120deg, var(--blue), var(--aqua));
+  color: var(--white);
+  border: 2px solid #ffffff66;
+  border-radius: 16px;
+  padding: 1.1rem 1rem;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: auto -20% -32px -20%;
+  height: 72px;
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent 0,
+    transparent 20px,
+    rgba(252, 76, 2, 0.35) 20px,
+    rgba(252, 76, 2, 0.35) 32px
+  );
+}
+
+.hero h1 {
+  margin: 0;
+  letter-spacing: 0.06em;
+  font-size: clamp(1.5rem, 2.5vw, 2.1rem);
+  text-transform: uppercase;
+}
+
+.hero p {
+  margin: 0.45rem 0 0;
+  color: #e6fbff;
+  max-width: 72ch;
+}
+
+.panel {
+  background: linear-gradient(180deg, #ffffff, var(--panel));
+  border: 2px solid var(--line);
+  border-radius: 14px;
+  padding: 1rem;
+  margin-top: 1rem;
+  box-shadow: 0 10px 24px rgba(0, 87, 120, 0.1);
+}
+
+.controls {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.admin-controls {
+  border: 2px dashed var(--line);
+  border-radius: 10px;
+  padding: 0.75rem;
+  background: #f1fcfd;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--ink);
+  margin-bottom: 0.65rem;
+}
+
+.checkbox-label input {
+  width: auto;
+}
+
+.pool-value-grid {
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.control-grid {
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+label {
+  display: grid;
+  gap: 0.35rem;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  border: 1px solid #65aeb7;
+  border-radius: 8px;
+  padding: 0.55rem 0.65rem;
+  font-size: 1rem;
+  color: var(--ink);
+  background: #fff;
+  font-family: inherit;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid rgba(252, 76, 2, 0.25);
+  border-color: var(--orange);
+}
+
+textarea {
+  resize: vertical;
+}
+
+.buttons,
+.score-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  align-items: end;
+}
+
+button {
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: linear-gradient(180deg, var(--orange), #db3b00);
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0.55rem 0.85rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+button.secondary {
+  background: #fff;
+  color: var(--blue);
+  border-color: #65aeb7;
+}
+
+.button-link {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: linear-gradient(180deg, var(--orange), #db3b00);
+  color: #fff;
+  font-weight: 700;
+  padding: 0.55rem 0.85rem;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.button-link.secondary {
+  background: #fff;
+  color: var(--blue);
+  border-color: #65aeb7;
+}
+
+button.small {
+  padding: 0.5rem 0.7rem;
+  font-size: 0.82rem;
+}
+
+.board-wrap {
+  overflow-x: auto;
+}
+
+#squaresBoard {
+  border-collapse: collapse;
+  min-width: 760px;
+  width: 100%;
+}
+
+#squaresBoard th,
+#squaresBoard td,
+#registrantsTable th,
+#registrantsTable td {
+  border: 1px solid var(--line);
+  text-align: center;
+}
+
+#squaresBoard th,
+#registrantsTable th {
+  background: linear-gradient(180deg, #e8f9fb, #cbf0f4);
+  color: var(--blue);
+  font-size: 0.95rem;
+  padding: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+#squaresBoard td {
+  width: 66px;
+  height: 66px;
+  padding: 0.25rem;
+  font-size: 0.8rem;
+  line-height: 1.1;
+  cursor: pointer;
+  background: #fff;
+}
+
+#squaresBoard td.picked {
+  background: var(--pick);
+  font-weight: 700;
+}
+
+#squaresBoard td.winner {
+  background: var(--winner);
+  outline: 2px solid var(--orange);
+  outline-offset: -2px;
+}
+
+.axis-label {
+  min-width: 120px;
+  text-align: left;
+  padding-left: 0.7rem;
+}
+
+.score-panel h2,
+h2,
+h3 {
+  margin-top: 0;
+  color: var(--blue);
+  letter-spacing: 0.02em;
+}
+
+.section-note {
+  margin-top: 0;
+  color: var(--muted);
+}
+
+.quarter-rows {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.quarter-row {
+  display: grid;
+  gap: 0.6rem;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  align-items: end;
+  padding: 0.6rem;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+}
+
+.quarter-title {
+  font-weight: 800;
+  color: var(--blue);
+  text-transform: uppercase;
+}
+
+.quarter-row .buttons {
+  align-items: center;
+}
+
+.winner-text {
+  margin: 0.85rem 0 0;
+  font-weight: 700;
+  color: var(--orange);
+  min-height: 1.2rem;
+}
+
+.register-grid {
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  align-items: end;
+}
+
+.status-text {
+  margin: 0.75rem 0 0;
+  color: var(--muted);
+  min-height: 1.2rem;
+  font-weight: 700;
+}
+
+.registrant-header {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+}
+
+#registrantsTable {
+  width: 100%;
+  min-width: 600px;
+  border-collapse: collapse;
+  margin-top: 0.6rem;
+}
+
+#registrantsTable td {
+  padding: 0.5rem;
+  background: #fff;
+  text-align: left;
+}
+
+#registrantsTable td a {
+  color: var(--orange);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.empty-row {
+  text-align: center;
+  color: var(--muted);
+}
+
+.bulk-email-grid {
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: 1fr;
+}
+
+@media (max-width: 900px) {
+  .quarter-row {
+    grid-template-columns: 1fr;
+    align-items: stretch;
+  }
+}
+
+@media (max-width: 720px) {
+  .app {
+    padding: 0.7rem;
+  }
+
+  #squaresBoard td {
+    width: 56px;
+    height: 56px;
+    font-size: 0.73rem;
+  }
+}

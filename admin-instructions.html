@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Football Squares - Administrator Instructions</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Avenir Next", "Segoe UI", sans-serif;
+        background: #f4efe6;
+        color: #1f2a44;
+      }
+      main {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 1rem;
+      }
+      section {
+        background: #fffdf9;
+        border: 1px solid #d9d1c4;
+        border-radius: 12px;
+        padding: 1rem;
+        margin-top: 1rem;
+      }
+      h1, h2 {
+        margin-top: 0;
+      }
+      ol, ul {
+        line-height: 1.45;
+      }
+      a {
+        color: #0f7b6c;
+        font-weight: 600;
+      }
+      .signoff {
+        margin-top: 1rem;
+        font-weight: 700;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section>
+        <h1>Football Squares by Jonny+ - Administrator Instructions</h1>
+        <p>This guide is for running the pool efficiently from setup through winner announcements.</p>
+      </section>
+
+      <section>
+        <h2>Recommended Admin Workflow</h2>
+        <ol>
+          <li>Set home and away team names.</li>
+          <li>Set the base square value (`$1`, `$5`, `$10`, `$20`, `$25`, or `Other`).</li>
+          <li>Choose whether auto square recalculation is on, and select formula (`100 total squares` or `registered squares only`).</li>
+          <li>Confirm quarter payout percentages (default Q1-Q4: 25%, 25%, 25%, 25%).</li>
+          <li>Collect registrants (name, email, phone, payment app, and payment username/handle).</li>
+          <li>Optionally enable digit hiding while assignments are being finalized.</li>
+          <li>Assign squares manually or click <strong>Randomly Assign Registrants</strong>.</li>
+          <li>Reveal digits when ready.</li>
+          <li>At each quarter end, enter cumulative scores and click <strong>Highlight Q#</strong>.</li>
+          <li>Use <strong>Announce Q# Winner</strong> to notify all registrants.</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>Payout Controls</h2>
+        <ul>
+          <li><strong>Total Registered Funds</strong> are derived from base square value and registrant count.</li>
+          <li><strong>Quarter Winnings</strong> are calculated per quarter using that quarter's payout percentage.</li>
+          <li>The payout summary indicates whether total quarter percentages equal 100%.</li>
+          <li>Best practice: keep total payout percentages at exactly 100%.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Email and Communication</h2>
+        <ul>
+          <li>Use <strong>Send Bulk Email</strong> for general pool updates.</li>
+          <li>Use <strong>Announce Q# Winner</strong> for quarter-specific winner announcements with amount won.</li>
+          <li>If needed, use <strong>Copy All Emails</strong> as backup for external messaging tools.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Administration Tips</h2>
+        <ul>
+          <li>Do not announce a winner until the correct quarter scores are entered and highlighted.</li>
+          <li>If square ownership changes, re-highlight that quarter before announcing.</li>
+          <li>If you randomize digits again, previous winner highlights should be considered invalid and recalculated.</li>
+          <li>Keep SMTP settings valid so email actions succeed.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Support Ongoing Development</h2>
+        <p>
+          Donations help ongoing support, improvements, and feature development:
+          <a href="https://venmo.com/jonnypositive" target="_blank" rel="noopener noreferrer">Donate Here</a>
+        </p>
+        <p class="signoff">Jonny Positive; App Developer</p>
+      </section>
+    </main>
+  </body>
+</html>
